@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yIY-WC-7Az">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="bHZ-if-POT">
+            <objects>
+                <tabBarController id="yIY-WC-7Az" customClass="MainViewController" customModule="DYZB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mp6-Hb-0he">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJk-ZG-OOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2735" y="-419"/>
+        </scene>
+        <!--Live-->
+        <scene sceneID="6UH-io-3Zb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Live" id="3Qi-Bx-QeN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="jv3-Fk-K3I"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05L-VJ-6jw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1352" y="-368"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="9J7-Hj-AMZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="UzC-rm-6Ha" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="x9G-X7-oUF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7Y-yy-Oza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1139.1304347826087" y="-778.125"/>
+        </scene>
+        <!--Follow-->
+        <scene sceneID="yIk-Wx-CRR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Follow" id="Cdo-vS-HpR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="qkh-Td-p9B"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bb6-8G-5L3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1352" y="385"/>
+        </scene>
+        <!--Profire-->
+        <scene sceneID="Jvv-EN-sK7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profire" id="8u7-Xv-y3N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="seZ-o3-dSL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4IR-yw-cqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1419" y="1173"/>
+        </scene>
+    </scenes>
+</document>
