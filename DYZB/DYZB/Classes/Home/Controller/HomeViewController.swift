@@ -8,8 +8,19 @@
 
 import UIKit
 
+private let KTitleViewH :CGFloat = 40
+
 class HomeViewController: UIViewController {
 
+    // MARK: - 懒加载属性
+    private lazy var pageTitleView : PageTitleView = {
+        let titleFrame = CGRect(x: 0, y: KSatusBarH + KnavigationBar, width: KSreenW, height: KTitleViewH)
+        let titles = ["推荐","游戏","娱乐","趣玩"]
+        let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        return titleView
+    }()
+    
+    // MARK : 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置UI界面
@@ -22,7 +33,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     private func setupUI(){
+        // 1.设置导航栏
         setupNavigationBar()
+        // 2.添加titleView
+        view.addSubview(pageTitleView)
     }
     
     private func setupNavigationBar(){
