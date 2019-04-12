@@ -13,12 +13,33 @@ private let KTitleViewH :CGFloat = 40
 class HomeViewController: UIViewController {
 
     // MARK: - 懒加载属性
+    // titleView
     private lazy var pageTitleView : PageTitleView = {
         let titleFrame = CGRect(x: 0, y: KSatusBarH + KnavigationBar, width: KSreenW, height: KTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         return titleView
     }()
+    
+    // pageContentView
+   
+    private lazy var pageContentView : PageContentView = {
+        // 1.确定内容显示的frame
+        let contentH = KSreenH - KSatusBarH - KnavigationBar - KTitleViewH
+        let contentFrame = CGRect(x: 0, y: KSatusBarH + KnavigationBar + KTitleViewH, width: KSreenW, height: contentH)
+        // 2.确定所有的子控制器
+        var childVcs = [UIViewController]()
+        for _ in 0..<4{
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childVcs.append(vc)
+        }
+        let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        return contentView
+    }()
+    
+    
+    
     
     // MARK : 系统回调函数
     override func viewDidLoad() {
@@ -37,6 +58,8 @@ extension HomeViewController {
         setupNavigationBar()
         // 2.添加titleView
         view.addSubview(pageTitleView)
+        // 3.添加contentView
+        view.addSubview(pageContentView)
     }
     
     private func setupNavigationBar(){
