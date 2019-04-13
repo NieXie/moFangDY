@@ -142,3 +142,11 @@ extension PageTitleView {
         delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
     }
 }
+
+
+// MARK : 对外暴露方法
+extension PageTitleView {
+    func setTitleViewProgress(progress : CGFloat,sourceIndex : Int, targetIndex : Int)  {
+        
+    }
+}
