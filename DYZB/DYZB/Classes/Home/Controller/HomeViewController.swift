@@ -14,16 +14,17 @@ class HomeViewController: UIViewController {
 
     // MARK: - 懒加载属性
     // titleView
-    private lazy var pageTitleView : PageTitleView = {
+    private lazy var pageTitleView : PageTitleView = { [weak self] in
         let titleFrame = CGRect(x: 0, y: KSatusBarH + KnavigationBar, width: KSreenW, height: KTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
         return titleView
     }()
     
     // pageContentView
    
-    private lazy var pageContentView : PageContentView = {
+    private lazy var pageContentView : PageContentView = { [weak self] in
         // 1.确定内容显示的frame
         let contentH = KSreenH - KSatusBarH - KnavigationBar - KTitleViewH
         let contentFrame = CGRect(x: 0, y: KSatusBarH + KnavigationBar + KTitleViewH, width: KSreenW, height: contentH)
@@ -73,4 +74,11 @@ extension HomeViewController {
         let qrcodeItem = UIBarButtonItem(imageName: "Image_scan", highImageName: "Image_scan_click", size: size)
         navigationItem.rightBarButtonItems = [historyItem,searchItem,qrcodeItem]
     }
+}
+
+// MARK: -遵守pageTitleViewDelegate协议
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
+        pageContentView.setCurrentIndex(currentIndex: index)
+    } 
 }

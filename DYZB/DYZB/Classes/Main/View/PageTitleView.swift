@@ -8,13 +8,23 @@
 
 import UIKit
 
+// 定义协议
+protocol PageTitleViewDelegate :class{
+    // 代理方法
+    func pageTitleView(titleView : PageTitleView , selectedIndex index : Int)
+}
+
 // 滚动条的高度
 private let KScrollLineH : CGFloat = 2
 
 class PageTitleView: UIView {
     
+    // 定义下标值
+    private var currentIndex : Int = 0
     // MARK : 定义属性来保存接收的数据
     private var titles : [String]
+    // 定义代理属性
+    weak var delegate : PageTitleViewDelegate?
     // MARK: 懒加载属性
     private lazy var titleLabels : [UILabel] = [UILabel]()
     
@@ -80,6 +90,10 @@ extension PageTitleView {
             scrollview.addSubview(label)
             // 5.添加到存放label的数组中
             titleLabels.append(label)
+            // 6.添加手势
+            label.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(titleLabelClick(tapGes:)))
+            label.addGestureRecognizer(tapGes)
         }
     }
     
@@ -99,5 +113,32 @@ extension PageTitleView {
         }
         firstLabel.textColor = UIColor.orange
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - KScrollLineH, width: firstLabel.frame.width, height: KScrollLineH)
+    }
+}
+
+// MARK : - 监听label的点击
+extension PageTitleView {
+    @objc private func titleLabelClick(tapGes:UITapGestureRecognizer){
+        // 1.获取当前label
+        guard let currentLab = tapGes.view as? UILabel else {return}
+        
+        // 2.获取之前的label
+        let oldLab = titleLabels[currentIndex]
+        
+        // 3.切换文字的颜色
+        currentLab.textColor = UIColor.orange
+        oldLab.textColor = UIColor.darkGray
+        
+        //4. 保存最新lab的下标值
+        currentIndex = currentLab.tag
+        
+        //5.滚动条位置发生改变
+        let scrollLineX =  CGFloat(currentLab.tag) * scrollLine.frame.width
+        UIView.animate(withDuration: 0.15) {
+            self.scrollLine.frame.origin.x = scrollLineX
+        }
+        
+        // 6. 通知代理做事情
+        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
     }
 }
