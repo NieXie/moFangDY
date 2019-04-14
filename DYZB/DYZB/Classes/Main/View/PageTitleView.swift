@@ -13,9 +13,12 @@ protocol PageTitleViewDelegate :class{
     // 代理方法
     func pageTitleView(titleView : PageTitleView , selectedIndex index : Int)
 }
-
+//MARK:- 定义常量
 // 滚动条的高度
 private let KScrollLineH : CGFloat = 2
+// 默认的颜色
+private let KNormalColor : (CGFloat,CGFloat,CGFloat) = (85,85,85)
+private let KSelectColor : (CGFloat,CGFloat,CGFloat) = (255,128,0)
 
 class PageTitleView: UIView {
     
@@ -81,7 +84,7 @@ extension PageTitleView {
             label.text = title
             label.tag = index
             label.font = UIFont.systemFont(ofSize: 16.0)
-            label.textColor = UIColor.darkGray
+            label.textColor = UIColor(r: KNormalColor.0, g: KNormalColor.1, b: KNormalColor.2)
             label.textAlignment = .center
             // 3.设置label的Frame
             let labelX : CGFloat = labelW * CGFloat(index)
@@ -126,8 +129,12 @@ extension PageTitleView {
         let oldLab = titleLabels[currentIndex]
         
         // 3.切换文字的颜色
-        currentLab.textColor = UIColor.orange
-        oldLab.textColor = UIColor.darkGray
+        if (currentIndex == currentLab.tag){
+            
+        }else{
+            currentLab.textColor = UIColor(r: KSelectColor.0, g: KSelectColor.1, b: KSelectColor.2)
+            oldLab.textColor = UIColor(r: KNormalColor.0, g: KNormalColor.1, b: KNormalColor.2)
+        }
         
         //4. 保存最新lab的下标值
         currentIndex = currentLab.tag
@@ -147,6 +154,23 @@ extension PageTitleView {
 // MARK : 对外暴露方法
 extension PageTitleView {
     func setTitleViewProgress(progress : CGFloat,sourceIndex : Int, targetIndex : Int)  {
-        
+        // 1.取出sourceLabel 和targetLabel
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        // 2.处理滑块的逻辑
+        // 获取滚动的总距离
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        // 滚动的进度偏移量
+        let moveX = moveTotalX * progress
+        // 滚动的距离，在当前源label上加上滚动进度的偏移量
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        // 3.颜色的渐变(复杂)
+        // 3.1 取出变化的范围
+        let colorDelta = (KSelectColor.0 - KNormalColor.0,KSelectColor.1 - KNormalColor.1,KSelectColor.2 - KNormalColor.2)
+        // 3.2 变化sourceLabel
+        sourceLabel.textColor = UIColor(r: KSelectColor.0 - colorDelta.0 * progress, g: KSelectColor.1 - colorDelta.1 * progress, b: KSelectColor.2 - colorDelta.2 * progress)
+        targetLabel.textColor = UIColor(r: KNormalColor.0 + colorDelta.0 * progress, g: KNormalColor.1 + colorDelta.1 * progress, b: KNormalColor.2 + colorDelta.2 * progress)
+        // 4.记录最新的index
+        currentIndex = targetIndex
     }
 }
