@@ -22,6 +22,7 @@
 		8D5EDD7F225F86EC000E84A4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EDD7E225F86EC000E84A4 /* Common.swift */; };
 		8DC29A47226073FD00171B51 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC29A46226073FD00171B51 /* PageContentView.swift */; };
 		8DC29A492260770500171B51 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC29A482260770500171B51 /* UIColor-Extension.swift */; };
+		8DD4D7672264485F00E1C3CA /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4D7662264485F00E1C3CA /* RecommendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		8D5EDD7E225F86EC000E84A4 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		8DC29A46226073FD00171B51 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		8DC29A482260770500171B51 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		8DD4D7662264485F00E1C3CA /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				8D2BEB81225F02E7006E345B /* Home.storyboard */,
 				8D2BEB90225F0D4F006E345B /* HomeViewController.swift */,
+				8DD4D7662264485F00E1C3CA /* RecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				8D2BEB61225EE130006E345B /* AppDelegate.swift in Sources */,
 				8DC29A492260770500171B51 /* UIColor-Extension.swift in Sources */,
+				8DD4D7672264485F00E1C3CA /* RecommendViewController.swift in Sources */,
 				8D2BEB89225F0428006E345B /* MainViewController.swift in Sources */,
 				8D5EDD7D225F8412000E84A4 /* PageTitleView.swift in Sources */,
 				8DC29A47226073FD00171B51 /* PageContentView.swift in Sources */,

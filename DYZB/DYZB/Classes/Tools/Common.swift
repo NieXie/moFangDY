@@ -11,6 +11,8 @@ import UIKit
 // 定义一些常量
 let KSatusBarH : CGFloat = 20
 let KnavigationBar : CGFloat = 44
+let KTabbarH : CGFloat = 44
+
 
 let KSreenW = UIScreen.main.bounds.width
 let KSreenH = UIScreen.main.bounds.height
