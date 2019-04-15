@@ -13,7 +13,7 @@ private let KItemMargin : CGFloat = 10
 // 宽度
 private let KItemW = (KSreenW - 3 * KItemMargin) / 2
 // 高度
-private let KItemH = KSreenW * 3 / 4
+private let KItemH = KItemW * 3 / 4
 // 组头高度
 private let KHeaderViewH : CGFloat = 50
 // 普通cellID
@@ -38,12 +38,12 @@ class RecommendViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: KItemMargin, bottom: 0, right:KItemMargin )
         // 2.创建collectionView
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.blue
+        collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
-        // 注册cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: KNormalCellID)
+        // 注册cell  CollectionViewNormalCell       
+        collectionView.register( UINib(nibName: "CollectionViewNormalCell", bundle: nil), forCellWithReuseIdentifier: KNormalCellID)
         // 注册组头
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: KHeaderViewID)
+        collectionView.register( UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: KHeaderViewID)
         // 设置collectionView跟随父控件的大小进行展示
         collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         
@@ -83,14 +83,12 @@ extension RecommendViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 1.获取cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath)
-        cell.backgroundColor = UIColor.red
         return cell
     }
     // 组头
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        // 1.去除Seation的HeaderView
+        // 1.取出Seation的HeaderView
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: KHeaderViewID, for: indexPath)
-        headerView.backgroundColor = UIColor.green
         return headerView
     }
 }
