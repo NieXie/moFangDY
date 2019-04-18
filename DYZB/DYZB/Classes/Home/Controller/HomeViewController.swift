@@ -15,7 +15,8 @@ class HomeViewController: UIViewController {
     // MARK: - 懒加载属性
     // titleView
     private lazy var pageTitleView : PageTitleView = { [weak self] in
-        let titleFrame = CGRect(x: 0, y: KSatusBarH + KnavigationBar, width: KSreenW, height: KTitleViewH)
+        let titleFrame = CGRect(x: 0, y: KNewSatusBarH + KnavigationBar, width: KSreenW, height: KTitleViewH)
+        print(titleFrame)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         titleView.delegate = self
@@ -26,8 +27,8 @@ class HomeViewController: UIViewController {
    
     private lazy var pageContentView : PageContentView = { [weak self] in
         // 1.确定内容显示的frame
-        let contentH = KSreenH - KSatusBarH - KnavigationBar - KTitleViewH - KTabbarH
-        let contentFrame = CGRect(x: 0, y: KSatusBarH + KnavigationBar + KTitleViewH, width: KSreenW, height: contentH)
+        let contentH = KSreenH - KNewSatusBarH - KnavigationBar - KTitleViewH - KTabbarH
+        let contentFrame = CGRect(x: 0, y: KNewSatusBarH + KnavigationBar + KTitleViewH, width: KSreenW, height: contentH)
         // 2.确定所有的子控制器
         var childVcs = [UIViewController]()
         childVcs.append(RecommendViewController())

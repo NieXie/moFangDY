@@ -38,11 +38,6 @@ extension RecommendViewModel{
                 self.anchorGroups.append(group)
             }
             
-            for group in self.anchorGroups {
-                for anchors in group.anchors {
-                    print(anchors.nickname)
-                }
-            }
         }
     }
 }
