@@ -55,10 +55,20 @@ class RecommendViewController: UIViewController {
         
         return collectionView
     }()
-
+    
+    // 定义ViewModel属性
+    private lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    
+    
+    
+    
+    // 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 设置UI界面
         setupUI()
+        // 发送网络请求
+        loadData()
     }
 }
 
@@ -70,6 +80,12 @@ extension RecommendViewController{
     }
 }
 
+// MARK:请求数据
+extension RecommendViewController{
+    private func loadData(){
+        recommendVM.requestData()
+    }
+}
 
 // MARK:遵守UICollectionView的数据源协议
 extension RecommendViewController : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
