@@ -21,7 +21,7 @@ class AnchorModel: NSObject {
     /// 主播昵称
     @objc var nickname : String = ""
     /// 观看人数
-    @objc var online : String = ""
+    @objc var online : Int = 0
      /// 所在城市
     @objc var anchor_city : String = ""
     
