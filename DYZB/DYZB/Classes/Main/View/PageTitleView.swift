@@ -130,12 +130,10 @@ extension PageTitleView {
         
         // 3.切换文字的颜色
         if (currentIndex == currentLab.tag){
-            
-        }else{
-            currentLab.textColor = UIColor(r: KSelectColor.0, g: KSelectColor.1, b: KSelectColor.2)
-            oldLab.textColor = UIColor(r: KNormalColor.0, g: KNormalColor.1, b: KNormalColor.2)
+            return
         }
-        
+        currentLab.textColor = UIColor(r: KSelectColor.0, g: KSelectColor.1, b: KSelectColor.2)
+        oldLab.textColor = UIColor(r: KNormalColor.0, g: KNormalColor.1, b: KNormalColor.2)
         //4. 保存最新lab的下标值
         currentIndex = currentLab.tag
         

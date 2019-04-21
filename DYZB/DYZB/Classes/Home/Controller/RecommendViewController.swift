@@ -59,9 +59,6 @@ class RecommendViewController: UIViewController {
     // 定义ViewModel属性
     private lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
-    
-    
-    
     // 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,16 +100,25 @@ extension RecommendViewController : UICollectionViewDataSource,UICollectionViewD
     }
     // 显示什么样的cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1 定义cell
-        var cell : UICollectionViewCell!
-        // 2 取出cell
+        
+        // 1. 取出模型对象
+        let group = recommendVM.anchorGroups[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
+        
+        // 2.定义cell
+        var cell : CollectionBaseCell!
+        // 3.取出cell
         if indexPath.section == 1{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: KPrettyCellID, for: indexPath)
+           cell = collectionView.dequeueReusableCell(withReuseIdentifier: KPrettyCellID, for: indexPath) as!CollectionPrettyCell
         }else{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath)as!CollectionViewNormalCell
         }
+        // 4.赋值数据
+        cell.anchor = anchor
+        
         return cell
     }
+    
     // 组头
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1.取出Seation的HeaderView

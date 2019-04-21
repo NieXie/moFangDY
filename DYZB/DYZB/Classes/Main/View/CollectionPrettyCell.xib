@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="334" height="341"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYQ-Hj-dXI">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYQ-Hj-dXI">
                         <rect key="frame" x="0.0" y="317" width="46" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="D2Q-Mh-x9R"/>
@@ -47,23 +47,24 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDQ-xb-q8L">
-                        <rect key="frame" x="269" y="5" width="60" height="20"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-hx-2mv">
+                        <rect key="frame" x="266" y="8" width="60" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="oa6-HR-9YX"/>
-                            <constraint firstAttribute="width" constant="60" id="qOV-Is-khy"/>
+                            <constraint firstAttribute="width" constant="60" id="5fV-8m-Vqt"/>
+                            <constraint firstAttribute="height" constant="20" id="vdu-HS-IaP"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
+                        <state key="normal" title="6666在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,17 +72,23 @@
                 <constraint firstAttribute="trailing" secondItem="KyC-9M-Acu" secondAttribute="trailing" constant="5" id="6Z7-ve-mOx"/>
                 <constraint firstItem="YeP-ao-QNY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ESq-wd-XfB"/>
                 <constraint firstItem="KyC-9M-Acu" firstAttribute="top" secondItem="YeP-ao-QNY" secondAttribute="bottom" constant="5" id="FZk-5z-Vqx"/>
+                <constraint firstItem="LZx-hx-2mv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Lbu-jV-x1x"/>
                 <constraint firstItem="YeP-ao-QNY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ml8-AJ-ECT"/>
                 <constraint firstItem="KyC-9M-Acu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NCF-ah-LGW"/>
                 <constraint firstAttribute="trailing" secondItem="YeP-ao-QNY" secondAttribute="trailing" id="SFa-eK-SbT"/>
+                <constraint firstAttribute="trailing" secondItem="LZx-hx-2mv" secondAttribute="trailing" constant="8" id="VmR-pU-ZLB"/>
                 <constraint firstItem="IYQ-Hj-dXI" firstAttribute="top" secondItem="KyC-9M-Acu" secondAttribute="bottom" constant="5" id="ex0-py-aDK"/>
                 <constraint firstItem="IYQ-Hj-dXI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fwW-wR-R3c"/>
                 <constraint firstAttribute="bottom" secondItem="IYQ-Hj-dXI" secondAttribute="bottom" constant="10" id="mDd-8p-nhj"/>
-                <constraint firstItem="DDQ-xb-q8L" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="q35-Ps-3dB"/>
-                <constraint firstAttribute="trailing" secondItem="DDQ-xb-q8L" secondAttribute="trailing" constant="5" id="snY-Sz-qgg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="334" height="341"/>
+            <connections>
+                <outlet property="cityBtn" destination="IYQ-Hj-dXI" id="4S3-6U-HkN"/>
+                <outlet property="iconImageView" destination="YeP-ao-QNY" id="QxL-0b-kiT"/>
+                <outlet property="nickNameLabel" destination="KyC-9M-Acu" id="tI1-Ws-9ju"/>
+                <outlet property="onlineBtn" destination="LZx-hx-2mv" id="Pem-uj-AwD"/>
+            </connections>
             <point key="canvasLocation" x="13" y="127"/>
         </collectionViewCell>
     </objects>
