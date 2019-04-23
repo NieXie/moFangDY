@@ -18,6 +18,8 @@ private let KNormalItemH = KItemW * 3 / 4
 private let KPrettyItemH = KItemW * 4 / 3
 // 组头高度
 private let KHeaderViewH : CGFloat = 50
+//轮播图的高度
+private let KCycleViewH : CGFloat = KSreenW * 3 / 8
 // 普通cellID
 private let KNormalCellID = "KNormalCellID"
 // 颜值cellID
@@ -59,6 +61,13 @@ class RecommendViewController: UIViewController {
     // 定义ViewModel属性
     private lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
+    private lazy var cycleView : RecommendCycleView = {
+        let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -KCycleViewH, width: KSreenW, height: KCycleViewH)
+        return cycleView
+    }()
+    
+    
     // 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +83,12 @@ extension RecommendViewController{
     private func setupUI(){
         // 1.将UICollectionView添加到视图的View中
         view.addSubview(collectionView)
+        
+        // 2.将CycleView添加到UICollectionView中
+        collectionView.addSubview(cycleView)
+        
+        // 3.设置collectionView的内边距
+        collectionView.contentInset = UIEdgeInsets(top: KCycleViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
