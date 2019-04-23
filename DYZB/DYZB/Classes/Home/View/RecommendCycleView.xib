@@ -27,17 +27,18 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="iN0-l3-epB" id="6GV-v8-gqI"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="e2H-9l-KoU"/>
                     </connections>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AWQ-Bp-HfE">
-                    <rect key="frame" x="326" y="113" width="39" height="37"/>
+                    <rect key="frame" x="326" y="116" width="39" height="37"/>
                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" red="1" green="0.66707263784282866" blue="0.21285962855065155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
             </subviews>
             <color key="backgroundColor" red="1" green="0.2027504956" blue="0.15492940180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="AWQ-Bp-HfE" secondAttribute="bottom" id="SHl-tR-nn3"/>
+                <constraint firstAttribute="bottom" secondItem="AWQ-Bp-HfE" secondAttribute="bottom" constant="-3" id="SHl-tR-nn3"/>
                 <constraint firstItem="m6N-ke-fG1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="p4T-lr-Zpk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="m6N-ke-fG1" secondAttribute="trailing" id="r4V-45-STQ"/>
                 <constraint firstAttribute="bottom" secondItem="m6N-ke-fG1" secondAttribute="bottom" id="uCh-bq-OGp"/>

@@ -19,6 +19,8 @@ class RecommendViewModel {
     // MARK:懒加载属性
     // 2-12组数据
     lazy var anchorGroups: [AnchorGroup] = [AnchorGroup]()
+    // 无限轮播数组
+    lazy var cycleModels :[CycleModel] = [CycleModel]()
     // 接收下面的成员变量属性
     private lazy var bigDataGroup: AnchorGroup = AnchorGroup()
     private lazy var prettyGroup: AnchorGroup = AnchorGroup()
@@ -26,6 +28,7 @@ class RecommendViewModel {
 
 //MARK:发送网络请求
 extension RecommendViewModel{
+    // 请求推荐数据
     func requestData(finishCallback: @escaping ()->())  {
         // 1.定义参数
         let parameters = ["limit":"4","offset":"0","time":NSDate.getCurrentTime()]
@@ -99,6 +102,23 @@ extension RecommendViewModel{
         dGroup.notify(queue: DispatchQueue.main) {
             self.anchorGroups.insert(self.prettyGroup, at: 0)
             self.anchorGroups.insert(self.bigDataGroup, at: 0)
+            finishCallback()
+        }
+    }
+    
+    // 请求无限轮播的数据
+    func requestCycleData(finishCallback:@escaping ()->()){
+        NetworkTools.requestData(type: .GET, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version":"2.300"]) { (result) in
+            // 1.获取整体字典数据
+            guard let resultDict = result as? [String : Any] else {return}
+            // 2.根据data的key获取数据
+            guard let dataArray = resultDict["data"] as? [[String : Any]] else {return}
+            
+            // 3.遍历循环字典转模型
+            for dict in dataArray {
+                self.cycleModels.append(CycleModel(dict: dict))
+            }
+            
             finishCallback()
         }
     }
