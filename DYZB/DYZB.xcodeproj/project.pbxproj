@@ -32,6 +32,8 @@
 		8D84C9CC2267039A00BD8089 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84C9CB2267039A00BD8089 /* NetworkTools.swift */; };
 		8D84C9CF226707EE00BD8089 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84C9CE226707EE00BD8089 /* RecommendViewModel.swift */; };
 		8D84C9D122670CD100BD8089 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84C9D022670CD100BD8089 /* NSDate-Extension.swift */; };
+		8DA23ED322719A660018F215 /* RecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA23ED222719A660018F215 /* RecommendGameView.swift */; };
+		8DA23ED522719A750018F215 /* RecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA23ED422719A750018F215 /* RecommendGameView.xib */; };
 		8DC29A47226073FD00171B51 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC29A46226073FD00171B51 /* PageContentView.swift */; };
 		8DC29A492260770500171B51 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC29A482260770500171B51 /* UIColor-Extension.swift */; };
 		8DD4D7672264485F00E1C3CA /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4D7662264485F00E1C3CA /* RecommendViewController.swift */; };
@@ -72,6 +74,8 @@
 		8D84C9CB2267039A00BD8089 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		8D84C9CE226707EE00BD8089 /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		8D84C9D022670CD100BD8089 /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		8DA23ED222719A660018F215 /* RecommendGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendGameView.swift; sourceTree = "<group>"; };
+		8DA23ED422719A750018F215 /* RecommendGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendGameView.xib; sourceTree = "<group>"; };
 		8DC29A46226073FD00171B51 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		8DC29A482260770500171B51 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		8DD4D7662264485F00E1C3CA /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				8D37D695226EC42B004C4A10 /* RecommendCycleView.xib */,
 				8D37D699226EE24C004C4A10 /* CollectionCycleCell.swift */,
 				8D37D69A226EE24C004C4A10 /* CollectionCycleCell.xib */,
+				8DA23ED222719A660018F215 /* RecommendGameView.swift */,
+				8DA23ED422719A750018F215 /* RecommendGameView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				8D37D69C226EE24C004C4A10 /* CollectionCycleCell.xib in Resources */,
 				8D30B6A0226607BF009A68E3 /* CollectionPrettyCell.xib in Resources */,
 				8D2BEB80225F01FB006E345B /* Live.storyboard in Resources */,
+				8DA23ED522719A750018F215 /* RecommendGameView.xib in Resources */,
 				8D2BEB85225F031D006E345B /* Follow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +435,7 @@
 				8D5EDD7D225F8412000E84A4 /* PageTitleView.swift in Sources */,
 				8DC29A47226073FD00171B51 /* PageContentView.swift in Sources */,
 				8D2BEB94225F126E006E345B /* UIBarButtonItem-Extension.swift in Sources */,
+				8DA23ED322719A660018F215 /* RecommendGameView.swift in Sources */,
 				8D30B69F226607BF009A68E3 /* CollectionPrettyCell.swift in Sources */,
 				8D84C9D122670CD100BD8089 /* NSDate-Extension.swift in Sources */,
 				8D0484EA226C4DAD001C0081 /* CollectionBaseCell.swift in Sources */,
