@@ -27,6 +27,9 @@ class AnchorGroup: NSObject {
     /// 定义主播的模型对象数组
     lazy var anchors : [AnchorModel] = [AnchorModel]()
     
+    /// 游戏对应的图标
+    @objc var icon_url : String = ""
+    
     init(dict : [String : Any]) {
         super.init()
         setValuesForKeys(dict)
