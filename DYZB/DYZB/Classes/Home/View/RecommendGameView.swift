@@ -60,8 +60,6 @@ extension RecommendGameView : UICollectionViewDataSource {
         cell.group = group
         return cell
     }
-    
-
 }
 
 

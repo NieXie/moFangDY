@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E6BAB3A79FD3CE3C13ECCEA /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17508B88A6EC86A27C4CCA29 /* Pods_DYZB.framework */; };
 		8D0484EA226C4DAD001C0081 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0484E9226C4DAD001C0081 /* CollectionBaseCell.swift */; };
+		8D1FE98D22A8E9F1003274BD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1FE98C22A8E9F1003274BD /* GameViewController.swift */; };
 		8D2BEB61225EE130006E345B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2BEB60225EE130006E345B /* AppDelegate.swift */; };
 		8D2BEB66225EE130006E345B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2BEB64225EE130006E345B /* Main.storyboard */; };
 		8D2BEB68225EE131006E345B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D2BEB67225EE131006E345B /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		17508B88A6EC86A27C4CCA29 /* Pods_DYZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3E8F083E26AC22791AE363 /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
 		8D0484E9226C4DAD001C0081 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		8D1FE98C22A8E9F1003274BD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8D2BEB5D225EE130006E345B /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2BEB60225EE130006E345B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D2BEB65225EE130006E345B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				8D2BEB81225F02E7006E345B /* Home.storyboard */,
 				8D2BEB90225F0D4F006E345B /* HomeViewController.swift */,
 				8DD4D7662264485F00E1C3CA /* RecommendViewController.swift */,
+				8D1FE98C22A8E9F1003274BD /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				8D2BEB61225EE130006E345B /* AppDelegate.swift in Sources */,
 				8DD4D76A22649ED600E1C3CA /* CollectionHeaderView.swift in Sources */,
 				8DC29A492260770500171B51 /* UIColor-Extension.swift in Sources */,
+				8D1FE98D22A8E9F1003274BD /* GameViewController.swift in Sources */,
 				8DD4D7672264485F00E1C3CA /* RecommendViewController.swift in Sources */,
 				8DE55C692268445200B35973 /* AnchorGroup.swift in Sources */,
 				8D2BEB89225F0428006E345B /* MainViewController.swift in Sources */,
